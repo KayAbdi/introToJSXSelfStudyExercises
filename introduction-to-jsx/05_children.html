@@ -11,7 +11,7 @@
     <!-- Don't use this in production: -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
-  <body>
+  <body id="xidid">
 
     <!-- We will put our React component inside this div. -->
     <div id="root"></div>
@@ -22,9 +22,13 @@
   
     <!-- Load our React component. -->
     <script defer type="text/babel">
+      const style = {
+        marginTop: '10px',
+        padding: '20px'
+      }
 
       const element = 
-        <div className="container">
+        <div style={style} className="container">
           <div className="card">
               <div className="card-header">
                 Featured

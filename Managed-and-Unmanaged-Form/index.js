@@ -6,6 +6,7 @@ function SignUp(){
     const [checkbox,setCheckbox] = React.useState('');
 
     function handle(){
+        
         console.log('year:',year);
         console.log('name:',name);
         console.log('email:',email);
