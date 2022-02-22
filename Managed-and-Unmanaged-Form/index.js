@@ -1,36 +1,26 @@
 function SignUp(){
-    const [year,setYear]   = React.useState('');
-    const [name,setName]   = React.useState('');
-    const [email,setEmail] = React.useState('');
-    const [password,setPassword] = React.useState('');
-    const [checkbox,setCheckbox] = React.useState('');
-
+    const [values, handleChange] = useForm({year:'',name:'',email:'',password:'',checkbox:false});
     function handle(){
-        
-        console.log('year:',year);
-        console.log('name:',name);
-        console.log('email:',email);
-        console.log('password:',password);
-        console.log('checkbox:',checkbox);
+        console.log('values:',values);
     }
     console.log('hello');
 
     return (
         <>
         <h1>Hello</h1>
-        <select value={year} onChange={e => setYear(e.target.value)}>
-            <option>Freshman</option>
-            <option>Sophmore</option>
-            <option>Junior</option>
-            <option>Senior</option>    
+        <select name="year" id="year" value={values.year} onChange={handleChange}>
+            <option value="Freshman">Freshman</option>
+            <option value="Sophmore">Sophmore</option>
+            <option value="Junior">Junior</option>
+            <option value="Senior">Senior</option>    
         </select>
         <div>Name</div>
-        <input type="text" value={name} onChange={e => setName(e.target.value)}/>
+        <input type="text" name="name" value={values.name} onChange={handleChange}/>
         <div>Email</div>
-        <input type="text" value={email} onChange={e => setEmail(e.target.value)}/>
+        <input type="text" name="email" value={values.email} onChange={handleChange}/>
         <div>Password</div>
-        <input type="text" value={password} onChange={e => setPassword(e.target.value)}/>  
-        <div><input type="checkbox" value={checkbox} onChange={e => setCheckbox(e.target.checked)}/> 
+        <input type="text" name="password" value={values.password} onChange={handleChange}/>  
+        <div><input type="checkbox" name="checkbox" value={values.checkbox} onChange={handleChange}/> 
             Rememeber me
         </div>
         <button onClick={handle}>Submit</button>    
